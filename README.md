@@ -32,14 +32,14 @@ Craft Closure allows you to use arrow function closures anywhere, which is espec
 
 Once you've added the `nystudio107/craft-closure` package to your project, no further setup is needed. This is because it operates as an auto-bootstrapping Yii2 Module.
 
-You can then pass a closure as a parameter to anything that accepts them, such as many [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods):
+You can then pass an arrow function closure as a parameter to anything that accepts them, such as many [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods):
 
 ```twig
     {% set collection = collect(['a', 'b', 'c']) %}
     {% set contains = collection.contains((value, key) => value == 'z') %}
 ```
 
-Or you can assign a closure to a Twig variable for re-use:
+Or you can assign an arrow function closure to a Twig variable for re-use:
 
 ```twig
     {% set collection = collect(['a', 'b', 'c']) %}
