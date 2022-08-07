@@ -26,7 +26,7 @@ Twig supports arrow function closures, but only in the [filter](https://twig.sym
 
 Twig unfortunately [has no plans](https://github.com/twigphp/Twig/issues/3402) to allow for more widespread usage of arrow function closures.
 
-Craft Closure allows you to use arrow function closures anywhere, which is especially useful [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods), many of which take a closure as a parameter.
+Craft Closure allows you to use arrow function closures anywhere, which is especially useful with [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods), many of which take a closure as a parameter.
 
 ## Using Closure
 
@@ -47,7 +47,7 @@ Or you can assign an arrow function closure to a Twig variable for re-use:
     {% set contains = collection.contains(closure) %}
 ```
 
-This is especially useful now that Craft element queries can all return a Collection via the [.collect()](https://docs.craftcms.com/api/v4/craft-db-query.html#public-methods) method.
+Using arrow function closures especially useful now that Craft element queries can all return a Collection via the [.collect()](https://docs.craftcms.com/api/v4/craft-db-query.html#public-methods) method.
 
 ## Closure Roadmap
 
