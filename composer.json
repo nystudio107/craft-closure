@@ -1,0 +1,48 @@
+{
+  "name": "nystudio107/craft-closure",
+  "description": "Allows you to use arrow function closures in Twig",
+  "type": "yii2-extension",
+  "version": "1.0.0",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "twig",
+    "closure",
+    "closures",
+    "arrow",
+    "function"
+  ],
+  "support": {
+    "docs": "https://github.com/nystudio107/craft-closure/blob/v1/README.md",
+    "issues": "https://github.com/nystudio107/craft-closure/issues",
+    "source": "https://github.com/nystudio107/craft-closure"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "nystudio107",
+      "homepage": "https://nystudio107.com"
+    }
+  ],
+  "require": {
+    "craftcms/cms": "^4.0.0",
+    "twig/twig": "^3.0.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "nystudio107\\closure\\": "src/"
+    }
+  },
+  "extra": {
+    "bootstrap": "nystudio107\\closure\\Closure"
+  }
+}
