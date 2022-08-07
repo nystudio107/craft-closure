@@ -26,7 +26,7 @@ Twig supports arrow function closures, but only in the [filter](https://twig.sym
 
 Twig unfortunately [has no plans](https://github.com/twigphp/Twig/issues/3402) to allow for more widespread usage of arrow function closures.
 
-Closure allows you to use arrow function closures anywhere, which is especially useful [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods), many of which take a closure as a parameter.
+Craft Closure allows you to use arrow function closures anywhere, which is especially useful [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods), many of which take a closure as a parameter.
 
 ## Using Closure
 
