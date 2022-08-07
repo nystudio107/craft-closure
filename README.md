@@ -47,7 +47,7 @@ Or you can assign an arrow function closure to a Twig variable for re-use:
     {% set contains = collection.contains(closure) %}
 ```
 
-Using arrow function closures especially useful now that Craft element queries can all return a Collection via the [.collect()](https://docs.craftcms.com/api/v4/craft-db-query.html#public-methods) method.
+Using arrow function closures especially useful now that Craft element queries can all return a Collection via the [.collect()](https://docs.craftcms.com/api/v4/craft-db-query.html#method-collect) method.
 
 ## Closure Roadmap
 
