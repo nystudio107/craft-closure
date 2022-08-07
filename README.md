@@ -22,14 +22,37 @@ To install Closure, follow these steps:
 
 ## About Closure
 
+Twig supports arrow function closures, but only in the [filter](https://twig.symfony.com/doc/3.x/filters/filter.html), [map](https://twig.symfony.com/doc/3.x/filters/map.html), and [reduce](https://twig.symfony.com/doc/3.x/filters/reduce.html) filters.
+
+Twig unfortunately [has no plans](https://github.com/twigphp/Twig/issues/3402) to allow for more widespread usage of arrow function closures.
+
+Closure allows you to use arrow function closures anywhere, which is especially useful [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods), many of which take a closure as a parameter.
+
 ## Using Closure
 
 Once you've added the `nystudio107/craft-closure` package to your project, no further setup is needed. This is because it operates as an auto-bootstrapping Yii2 Module.
+
+You can then pass a closure as a parameter to anything that accepts them, such as many [Laravel Collection methods](https://laravel.com/docs/9.x/collections#available-methods):
+
+```twig
+    {% set collection = collect(['a', 'b', 'c']) %}
+    {% set contains = collection.contains((value, key) => value == 'z') %}
+```
+
+Or you can assign a closure to a Twig variable for re-use:
+
+```twig
+    {% set collection = collect(['a', 'b', 'c']) %}
+    {% set closure = (value, key) => value == 'a' %}
+    {% set contains = collection.contains(closure) %}
+```
+
+This is especially useful now that Craft element queries can all return a Collection via the [.collect()](https://docs.craftcms.com/api/v4/craft-db-query.html#public-methods) method.
 
 ## Closure Roadmap
 
 Some things to do, and ideas for potential features:
 
-* 
+* Initial release
 
 Brought to you by [nystudio107](https://nystudio107.com/)
