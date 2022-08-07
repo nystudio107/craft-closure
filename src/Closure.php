@@ -33,8 +33,7 @@ class Closure extends Module implements BootstrapInterface
     // =========================================================================
 
     const ID = 'closure';
-
-
+    
     // Public Methods
     // =========================================================================
 
