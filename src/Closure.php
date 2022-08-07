@@ -33,7 +33,7 @@ class Closure extends Module implements BootstrapInterface
     // =========================================================================
 
     const ID = 'closure';
-    
+
     // Public Methods
     // =========================================================================
 
@@ -98,6 +98,9 @@ class Closure extends Module implements BootstrapInterface
     }
 
     /**
+     * Add our ClosureExpressionParser to default $allowArrow = true to let
+     * arrow function closures work outside of Twig filter contexts
+     *
      * @return void
      */
     protected function addClosure(): void
