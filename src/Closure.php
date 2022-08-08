@@ -12,8 +12,8 @@ namespace nystudio107\closure;
 
 use Craft;
 use craft\console\Application as CraftConsoleApp;
-use craft\services\Plugins;
 use craft\web\Application as CraftWebApp;
+use craft\web\View;
 use nystudio107\closure\helpers\Reflection as ReflectionHelper;
 use nystudio107\closure\twig\ClosureExpressionParser;
 use ReflectionException;
@@ -33,6 +33,11 @@ class Closure extends Module implements BootstrapInterface
     // =========================================================================
 
     const ID = 'closure';
+
+    // Protected Static Properties
+    // =========================================================================
+
+    protected bool $closureAdded = false;
 
     // Public Methods
     // =========================================================================
@@ -91,8 +96,8 @@ class Closure extends Module implements BootstrapInterface
     {
         // Handler: Plugins::EVENT_AFTER_LOAD_PLUGINS
         Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_LOAD_PLUGINS,
+            View::class,
+            View::EVENT_BEFORE_RENDER_TEMPLATE,
             fn() => $this->addClosure()
         );
     }
@@ -105,6 +110,9 @@ class Closure extends Module implements BootstrapInterface
      */
     protected function addClosure(): void
     {
+        if ($this->closureAdded) {
+            return;
+        }
         $twig = Craft::$app->getView()->getTwig();
         // Get the parser object used by Twig
         try {
@@ -129,5 +137,7 @@ class Closure extends Module implements BootstrapInterface
         $expressionParserReflection->setAccessible(true);
         $expressionParser = new ClosureExpressionParser($parser, $twig);
         $expressionParserReflection->setValue($parser, $expressionParser);
+        // Indicate that we've gotten closure
+        $this->closureAdded = true;
     }
 }

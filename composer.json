@@ -2,7 +2,7 @@
   "name": "nystudio107/craft-closure",
   "description": "Allows you to use arrow function closures in Twig",
   "type": "yii2-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "craft",
     "cms",
