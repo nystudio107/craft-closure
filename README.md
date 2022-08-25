@@ -51,6 +51,10 @@ Or you can assign an arrow function closure to a Twig variable for re-use:
 
 Using arrow function closures especially useful now that Craft element queries can all return a Collection via the [.collect()](https://docs.craftcms.com/api/v4/craft-db-query.html#method-collect) method.
 
+## More on Arrow Functions in Twig
+
+More here: [Twig Arrow Functions](https://craftquest.io/courses/arrow-functions-in-twig)
+
 ## Closure Roadmap
 
 Some things to do, and ideas for potential features:
