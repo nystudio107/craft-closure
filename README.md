@@ -4,7 +4,7 @@
 
 Allows you to use arrow function closures in Twig
 
-**N.B.:** While Closure is currently in beta, I'd actively encourage people to try it out and use it. While it is a bit of a monkey patch, it's a pretty clean/simple one that relies on functionality that is already built into Twig
+While Closure is a bit of a monkey patch, it's a pretty clean/simple one that relies on functionality that is already built into Twig
 
 ## Requirements
 
