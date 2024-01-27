@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.2 - 2024.01.27
+### Added
+* Fix semver to `|| ^5.0.0-alpha.1`
+
 ## 1.0.1 - 2024.01.26
 ### Added
 * Add Craft CMS 5 compatibility
