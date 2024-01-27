@@ -8,7 +8,7 @@ While Closure is a bit of a monkey patch, it's a pretty clean/simple one that re
 
 ## Requirements
 
-Closure requires Craft CMS 4.0.0 or later
+Closure requires Craft CMS 4.x or 5.x
 
 ## Installation
 
