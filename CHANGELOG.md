@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.3 - 2024.01.31
+### Added
+* Add `phpstan` and `ecs` code linting
+* Add `code-analysis.yaml` GitHub action
+
+### Changed
+* PHPstan code cleanup
+* ECS code cleanup
+
 ## 1.0.2 - 2024.01.27
 ### Fixed
 * Fix semver to `|| ^5.0.0-alpha.1`

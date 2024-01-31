@@ -32,7 +32,7 @@ class Closure extends Module implements BootstrapInterface
     // Constants
     // =========================================================================
 
-    const ID = 'closure';
+    public const ID = 'closure';
 
     // Protected Static Properties
     // =========================================================================
