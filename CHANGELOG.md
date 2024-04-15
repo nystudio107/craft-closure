@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.4 - 2024.04.15
+### Added
+* Stable release for Craft CMS 5
+* Add `create-release.yml` for automated releases
+
 ## 1.0.3 - 2024.01.31
 ### Added
 * Add `phpstan` and `ecs` code linting
