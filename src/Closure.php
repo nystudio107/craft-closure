@@ -13,6 +13,7 @@ namespace nystudio107\closure;
 use Craft;
 use craft\console\Application as CraftConsoleApp;
 use craft\web\Application as CraftWebApp;
+use craft\web\twig\Environment;
 use craft\web\View;
 use nystudio107\closure\helpers\Reflection as ReflectionHelper;
 use nystudio107\closure\twig\ClosureExpressionParser;
@@ -106,14 +107,16 @@ class Closure extends Module implements BootstrapInterface
      * Add our ClosureExpressionParser to default $allowArrow = true to let
      * arrow function closures work outside of Twig filter contexts
      *
+     * @param Environment|null $twig
      * @return void
      */
-    protected function addClosure(): void
+    public function addClosure(?Environment $twig = null): void
     {
         if ($this->closureAdded) {
             return;
         }
-        $twig = Craft::$app->getView()->getTwig();
+        // Custom environment if specified, otherwise Craft default
+        $twig = $twig ?? Craft::$app->getView()->getTwig();
         // Get the parser object used by Twig
         try {
             $parserReflection = ReflectionHelper::getReflectionProperty($twig, 'parser');
