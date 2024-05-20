@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.5 - 2024.05.20
+### Added
+* Converted `addClosure()` to a public method so it is callable by anyone ([#1](https://github.com/nystudio107/craft-closure/pull/1))
+
 ## 1.0.4 - 2024.04.15
 ### Added
 * Stable release for Craft CMS 5
