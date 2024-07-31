@@ -12,6 +12,7 @@ namespace nystudio107\closure;
 
 use Craft;
 use craft\console\Application as CraftConsoleApp;
+use craft\events\CreateTwigEvent;
 use craft\web\Application as CraftWebApp;
 use craft\web\twig\Environment;
 use craft\web\View;
@@ -78,32 +79,6 @@ class Closure extends Module implements BootstrapInterface
     // =========================================================================
 
     /**
-     * Configure our module
-     *
-     * @return void
-     */
-    protected function configureModule(): void
-    {
-        // Register our module
-        Craft::$app->setModule($this->id, $this);
-    }
-
-    /**
-     * Registers our event handlers
-     *
-     * @return void
-     */
-    protected function registerEventHandlers(): void
-    {
-        // Handler: Plugins::EVENT_AFTER_LOAD_PLUGINS
-        Event::on(
-            View::class,
-            View::EVENT_BEFORE_RENDER_TEMPLATE,
-            fn() => $this->addClosure()
-        );
-    }
-
-    /**
      * Add our ClosureExpressionParser to default $allowArrow = true to let
      * arrow function closures work outside of Twig filter contexts
      *
@@ -112,9 +87,6 @@ class Closure extends Module implements BootstrapInterface
      */
     public function addClosure(?Environment $twig = null): void
     {
-        if ($this->closureAdded) {
-            return;
-        }
         // Custom environment if specified, otherwise Craft default
         $twig = $twig ?? Craft::$app->getView()->getTwig();
         // Get the parser object used by Twig
@@ -140,7 +112,31 @@ class Closure extends Module implements BootstrapInterface
         $expressionParserReflection->setAccessible(true);
         $expressionParser = new ClosureExpressionParser($parser, $twig);
         $expressionParserReflection->setValue($parser, $expressionParser);
-        // Indicate that we've gotten closure
-        $this->closureAdded = true;
+    }
+
+    /**
+     * Configure our module
+     *
+     * @return void
+     */
+    protected function configureModule(): void
+    {
+        // Register our module
+        Craft::$app->setModule($this->id, $this);
+    }
+
+    /**
+     * Registers our event handlers
+     *
+     * @return void
+     */
+    protected function registerEventHandlers(): void
+    {
+        // Handler: View::EVENT_AFTER_CREATE_TWIG
+        Event::on(
+            View::class,
+            View::EVENT_AFTER_CREATE_TWIG,
+            fn(CreateTwigEvent $event) => $this->addClosure($event->twig)
+        );
     }
 }
