@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.6 - 2024.07.31
+### Changed
+* Use the new (as of Craft `^4.3.0`) event `View::EVENT_AFTER_CREATE_TWIG` to hook Closure in, so it will work with any Craft-created Twig environment (not just when rendering page templates) ([#11774](https://github.com/craftcms/cms/pull/11774))
+* Require `craftcms/cms` `^4.3.0 || ^5.0.0`
+
 ## 1.0.5 - 2024.05.20
 ### Added
 * Converted `addClosure()` to a public method so it is callable by anyone ([#1](https://github.com/nystudio107/craft-closure/pull/1))
