@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.7 - 2024.10.08
+### Added
+* No longer load Craft Closure if the version of Twig is >= `3.15.0` because "arrow functions everywhere" is baked in. Also log a message to that effect
+
 ## 1.0.6 - 2024.07.31
 ### Changed
 * Use the new (as of Craft `^4.3.0`) event `View::EVENT_AFTER_CREATE_TWIG` to hook Closure in, so it will work with any Craft-created Twig environment (not just when rendering page templates) ([#11774](https://github.com/craftcms/cms/pull/11774))
