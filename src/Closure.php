@@ -68,6 +68,7 @@ class Closure extends Module implements BootstrapInterface
             return;
         }
         // Do nothing if we're running a version of Twig that has baked in support for "arrow functions everywhere"
+        // @phpstan-ignore-next-line
         if (version_compare(TwigEnvironment::VERSION, '3.15.0', '>=')) {
             Craft::warning('Craft Closure not loaded because this version of Twig already supports arrow functions everywhere. You can safely uninstall Craft Closure by removing it from your composer.json', __METHOD__);
             return;
