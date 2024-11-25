@@ -1,5 +1,13 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-closure/badges/quality-score.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-closure/?branch=develop) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-closure/badges/coverage.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-closure/?branch=develop) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-closure/badges/build.png?b=v1)](https://scrutinizer-ci.com/g/nystudio107/craft-closure/build-status/develop) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-closure/badges/code-intelligence.svg?b=v1)](https://scrutinizer-ci.com/code-intelligence)
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+# DEPRECATED
+
+This Craft CMS module is no longer supported or maintained, but it is fully functional, and you may continue to use it as you see fit. The license also allows you to fork it and make changes as needed for legacy support reasons.
+
+Instead, use [Twig 3.1.5's native functionality](https://github.com/twigphp/Twig/issues/3192) for arrow functions everywhere.
+
 # Closure for Craft CMS
 
 Allows you to use arrow function closures in Twig
